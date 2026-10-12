@@ -1,0 +1,157 @@
+{
+  "summary": {
+    "totalLogs": 6000000,
+    "benignEvents": 5517611,
+    "suspiciousEvents": 360883,
+    "maliciousEvents": 121506,
+    "activeAlerts": 482389
+  },
+  "severitySummary": {
+    "Low": 5517611,
+    "Medium": 180577,
+    "High": 210168,
+    "Critical": 91644
+  },
+  "logsOverTime": [
+    {
+      "time": "Jan",
+      "benign": 468269,
+      "suspicious": 30555,
+      "malicious": 10314
+    },
+    {
+      "time": "Feb",
+      "benign": 438241,
+      "suspicious": 28786,
+      "malicious": 9748
+    },
+    {
+      "time": "Mar",
+      "benign": 468015,
+      "suspicious": 30903,
+      "malicious": 10411
+    },
+    {
+      "time": "Apr",
+      "benign": 453329,
+      "suspicious": 29296,
+      "malicious": 9924
+    },
+    {
+      "time": "May",
+      "benign": 469666,
+      "suspicious": 30608,
+      "malicious": 10168
+    },
+    {
+      "time": "Jun",
+      "benign": 453694,
+      "suspicious": 29832,
+      "malicious": 10050
+    },
+    {
+      "time": "Jul",
+      "benign": 468920,
+      "suspicious": 30462,
+      "malicious": 10222
+    },
+    {
+      "time": "Aug",
+      "benign": 468883,
+      "suspicious": 30915,
+      "malicious": 10460
+    },
+    {
+      "time": "Sep",
+      "benign": 452959,
+      "suspicious": 29604,
+      "malicious": 9949
+    },
+    {
+      "time": "Oct",
+      "benign": 468730,
+      "suspicious": 30726,
+      "malicious": 10501
+    },
+    {
+      "time": "Nov",
+      "benign": 452192,
+      "suspicious": 29737,
+      "malicious": 9934
+    },
+    {
+      "time": "Dec",
+      "benign": 454713,
+      "suspicious": 29459,
+      "malicious": 9825
+    }
+  ],
+  "threatDistribution": [
+    {
+      "name": "Benign",
+      "value": 5517611
+    },
+    {
+      "name": "Suspicious",
+      "value": 360883
+    },
+    {
+      "name": "Malicious",
+      "value": 121506
+    }
+  ],
+  "protocolStats": [
+    {
+      "name": "TCP",
+      "count": 1497493
+    },
+    {
+      "name": "HTTP",
+      "count": 1201528
+    },
+    {
+      "name": "HTTPS",
+      "count": 1199970
+    },
+    {
+      "name": "UDP",
+      "count": 900422
+    },
+    {
+      "name": "ICMP",
+      "count": 599903
+    },
+    {
+      "name": "SSH",
+      "count": 300464
+    },
+    {
+      "name": "FTP",
+      "count": 300220
+    }
+  ],
+  "logTypeDistribution": [
+    {
+      "name": "Application",
+      "value": 2001768
+    },
+    {
+      "name": "Ids",
+      "value": 1999556
+    },
+    {
+      "name": "Firewall",
+      "value": 1998676
+    }
+  ],
+  "actionStats": [
+    {
+      "name": "Allowed",
+      "value": 3000646
+    },
+    {
+      "name": "Blocked",
+      "value": 2999354
+    }
+  ]
+}

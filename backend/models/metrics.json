@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "training_sample_size": 100000,
+    "test_sample_size": 20000,
+    "random_state": 42,
+    "classes": [
+      "benign",
+      "suspicious",
+      "malicious"
+    ],
+    "note": "100,000-record uniform sample across entire 6,000,000-record dataset used for reproducible model training.",
+    "data_leakage_note": "Synthetic Dataset Signature Characteristic: The Random Forest model achieves 99.46% test accuracy. URI request path and user-agent string tokens explain 86.7% of total feature importance. Threat categories in this dataset are strongly correlated with signature heuristics (e.g., 'DROP TABLE', 'sqlmap', '/etc/passwd'). Real-world production SOC models require periodic retraining on diverse traffic to prevent signature overfitting."
+  },
+  "supervised_models": {
+    "random_forest": {
+      "model_name": "Random Forest Classifier",
+      "accuracy": 0.9946,
+      "precision": 0.9945,
+      "recall": 0.9946,
+      "f1_score": 0.9945,
+      "confusion_matrix": {
+        "labels": [
+          "benign",
+          "suspicious",
+          "malicious"
+        ],
+        "matrix": [
+          [
+            18382,
+            0,
+            5
+          ],
+          [
+            18,
+            1160,
+            27
+          ],
+          [
+            1,
+            57,
+            350
+          ]
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "path:nmap",
+          "importance": 0.0822
+        },
+        {
+          "feature": "path:phpmyadmin",
+          "importance": 0.0822
+        },
+        {
+          "feature": "path:hydra",
+          "importance": 0.0757
+        },
+        {
+          "feature": "path:sqlmap",
+          "importance": 0.0723
+        },
+        {
+          "feature": "path:admin",
+          "importance": 0.0649
+        },
+        {
+          "feature": "path:login",
+          "importance": 0.0614
+        },
+        {
+          "feature": "path:sql",
+          "importance": 0.0484
+        },
+        {
+          "feature": "path:passwd",
+          "importance": 0.0454
+        },
+        {
+          "feature": "path:select",
+          "importance": 0.0433
+        },
+        {
+          "feature": "path:etc",
+          "importance": 0.0416
+        },
+        {
+          "feature": "path:table",
+          "importance": 0.0396
+        },
+        {
+          "feature": "path:backup",
+          "importance": 0.0376
+        },
+        {
+          "feature": "path:drop",
+          "importance": 0.0347
+        },
+        {
+          "feature": "path:union",
+          "importance": 0.0313
+        },
+        {
+          "feature": "bytes_transferred_log",
+          "importance": 0.0243
+        }
+      ],
+      "class_report": {
+        "benign": {
+          "precision": 0.9989674474213358,
+          "recall": 0.9997280687442215,
+          "f1-score": 0.99934761335218,
+          "support": 18387.0
+        },
+        "malicious": {
+          "precision": 0.9162303664921466,
+          "recall": 0.8578431372549019,
+          "f1-score": 0.8860759493670886,
+          "support": 408.0
+        },
+        "suspicious": {
+          "precision": 0.9531635168447001,
+          "recall": 0.9626556016597511,
+          "f1-score": 0.9578860445912469,
+          "support": 1205.0
+        },
+        "accuracy": 0.9946,
+        "macro avg": {
+          "precision": 0.956120443586061,
+          "recall": 0.9400756025529581,
+          "f1-score": 0.9477698691035051,
+          "support": 20000.0
+        },
+        "weighted avg": {
+          "precision": 0.994519924153138,
+          "recall": 0.9946,
+          "f1-score": 0.9945388118890379,
+          "support": 20000.0
+        }
+      }
+    },
+    "svm": {
+      "model_name": "Support Vector Machine (LinearSVC)",
+      "accuracy": 0.9951,
+      "precision": 0.9952,
+      "recall": 0.9951,
+      "f1_score": 0.995,
+      "confusion_matrix": {
+        "labels": [
+          "benign",
+          "suspicious",
+          "malicious"
+        ],
+        "matrix": [
+          [
+            18387,
+            0,
+            0
+          ],
+          [
+            27,
+            1178,
+            0
+          ],
+          [
+            1,
+            70,
+            337
+          ]
+        ]
+      },
+      "class_report": {
+        "benign": {
+          "precision": 0.9984795004072766,
+          "recall": 1.0,
+          "f1-score": 0.9992391717841421,
+          "support": 18387.0
+        },
+        "malicious": {
+          "precision": 1.0,
+          "recall": 0.8259803921568627,
+          "f1-score": 0.9046979865771813,
+          "support": 408.0
+        },
+        "suspicious": {
+          "precision": 0.9439102564102564,
+          "recall": 0.9775933609958506,
+          "f1-score": 0.9604565837749695,
+          "support": 1205.0
+        },
+        "accuracy": 0.9951,
+        "macro avg": {
+          "precision": 0.9807965856058444,
+          "recall": 0.9345245843842377,
+          "f1-score": 0.9547979140454309,
+          "support": 20000.0
+        },
+        "weighted avg": {
+          "precision": 0.9952227216481476,
+          "recall": 0.9951,
+          "f1-score": 0.9949738806783675,
+          "support": 20000.0
+        }
+      }
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "path:nmap",
+      "importance": 0.0822
+    },
+    {
+      "feature": "path:phpmyadmin",
+      "importance": 0.0822
+    },
+    {
+      "feature": "path:hydra",
+      "importance": 0.0757
+    },
+    {
+      "feature": "path:sqlmap",
+      "importance": 0.0723
+    },
+    {
+      "feature": "path:admin",
+      "importance": 0.0649
+    },
+    {
+      "feature": "path:login",
+      "importance": 0.0614
+    },
+    {
+      "feature": "path:sql",
+      "importance": 0.0484
+    },
+    {
+      "feature": "path:passwd",
+      "importance": 0.0454
+    },
+    {
+      "feature": "path:select",
+      "importance": 0.0433
+    },
+    {
+      "feature": "path:etc",
+      "importance": 0.0416
+    },
+    {
+      "feature": "path:table",
+      "importance": 0.0396
+    },
+    {
+      "feature": "path:backup",
+      "importance": 0.0376
+    },
+    {
+      "feature": "path:drop",
+      "importance": 0.0347
+    },
+    {
+      "feature": "path:union",
+      "importance": 0.0313
+    },
+    {
+      "feature": "bytes_transferred_log",
+      "importance": 0.0243
+    }
+  ],
+  "unsupervised_anomaly_detection": {
+    "model_name": "Isolation Forest",
+    "type": "Unsupervised Anomaly Detector",
+    "note": "Isolation Forest performs unsupervised out-of-distribution anomaly detection, returning anomaly flags and decision scores rather than 3-class threat labels.",
+    "test_total_samples": 20000,
+    "anomalies_flagged": 1561,
+    "normals_flagged": 18439,
+    "anomaly_rate_percent": 7.8,
+    "mean_anomaly_score": 0.0476
+  }
+}
